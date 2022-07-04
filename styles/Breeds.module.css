@@ -1,0 +1,30 @@
+.heading {
+    margin: 50px 20px;
+}
+
+.breedGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: start;
+    gap: 50px 100px;
+    font-size: 25px;
+}
+
+.breed {
+    cursor: pointer;
+}
+
+.main {
+    margin-block-end: 50px;
+}
+
+.breedBtn {
+    background: transparent;
+    border: none;
+}
+
+@media (max-width: 800px) {
+    .breedGrid {
+        grid-template-columns: 1fr 1fr;
+    }
+}

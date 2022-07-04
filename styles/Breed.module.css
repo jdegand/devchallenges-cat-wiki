@@ -1,0 +1,64 @@
+.topGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+    justify-content: center;
+    gap: 10px;
+    line-height: 2.5;
+    padding: 0 30px;
+}
+
+.description {
+    line-height: 1.5;
+    font-size: 24px;
+}
+
+.otherImagesGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: center;
+    gap: 10px;
+    margin-block-end: 20px;
+}
+
+.bubbleGrid {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    align-items: center;
+}
+
+.fs35 {
+    font-size: 35px;
+    margin-block: 20px;
+    margin-inline-start: 30px;
+}
+
+.radius {
+    border-radius: 20px;
+}
+
+@media (min-width: 700px) and (max-width: 1200px) {
+    .otherImagesGrid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (min-width: 1201px){
+    .topGrid {
+        grid-template-columns: 600px 1fr;
+        align-items: center;
+    }
+}
+
+@media (max-width: 699px) {
+
+    .topGrid {
+        grid-template-columns: 1fr;
+        justify-content: start;
+    }
+
+    .otherImagesGrid {
+        grid-template-columns: 1fr;
+        justify-content: center;
+    }
+}
