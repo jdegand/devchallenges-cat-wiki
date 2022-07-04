@@ -73,7 +73,7 @@ This application/site was created as a submission to a [DevChallenges](https://d
 - Unclear on how to get top ten most popular breeds.  
 - Can't search for multiple breeds at once on the api.  Have to use a promise.all() / multiple fetches to get each breed needed ie /breeds/search?q=beng
 - You can get 4 random images with image search and limit parameter but it is random and some pictures don't make sense for the design.  Plus image search gives you no idea of the breed etc.  
-- Image component has a lot of quirks and things to be mindful of.  Responsive image optimization is a nightmare.  It shouldn't be this unclear to do things that are extremely easy to do in basic html code. Adding a srcSet to the Image component is not really covered.  Having multiple images is not really necessary with the Image component.  So do you use the largest image exclusively? Next does scale down.  Can it scale up from a medium sized image?  
+- Image component has a lot of quirks and things to be mindful of.  Responsive image optimization is a nightmare.  It shouldn't be this unclear to do things that are extremely easy to do in basic html code. Adding a srcSet to the Image component is not really covered.  Having multiple images is not really necessary with the Image component.  So do you use the largest image exclusively? Next does scale down.  Can it scale up from a medium sized image? 
 - I used layout="responsive" and under tablet sizes, the background became too small when there was more space available.  You have to set image sizes in the config for device sizes that are not default values.  
 - Have to worry about duplicate pictures in the other images section
 - Aegean has same picture with different ids which shows up in the other images section
@@ -111,7 +111,7 @@ $ npm run dev
 - [Stack Overflow](https://stackoverflow.com/questions/63195562/next-js-set-background-image) - next background image
 - [Medium](https://antonball.medium.com/superhero-layout-staggered-css-grid-29430df9520) - staggered css grids
 - [Codepen](https://codepen.io/antonjb/pen/vMPgBJ) - staggered grid
-- [Stack Overflow](https://stackoverflow.com/questions/65169431/how-to-set-the-next-image-component-to-100-height)
+- [Stack Overflow](https://stackoverflow.com/questions/65169431/how-to-set-the-next-image-component-to-100-height) - next image component to 100% height
 - [YouTube](https://www.youtube.com/watch?v=XMmjeimDDgw) - move placeholder text on focus
 - [Codepen](https://codepen.io/Coding-in-Public/pen/BawMyvZ) - floating placeholder
 - [Codepen](https://codepen.io/gavinr/pen/djedBm) - search modal
