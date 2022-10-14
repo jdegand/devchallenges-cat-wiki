@@ -45,7 +45,7 @@
 
 ![](see-more-page-2.png)
 
-![](health-benefits-page.png)
+![](health-benefits-page.png "last sentence typo since fixed")
 
 ### Built With
 
