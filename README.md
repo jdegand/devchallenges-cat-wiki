@@ -1,7 +1,7 @@
 <h1 align="center">Cat Wiki</h1>
 
 <div align="center">
-   Solution for a challenge from  <a href="https://devchallenges.io/challenges/f4NJ53rcfgrP6sBMD2jt" target="_blank">Devchallenges.io</a>.
+   Solution for a challenge from  <a href="https://legacy.devchallenges.io/challenges/f4NJ53rcfgrP6sBMD2jt" target="_blank">Devchallenges.io</a>.
 </div>
 
 ## Table of Contents
@@ -17,35 +17,67 @@
 
 ![](homepage-mobile-1.png)
 
+***
+
 ![](homepage-mobile-2.png)
+
+***
 
 ![](mobile-suggestions.png)
 
+***
+
 ![](devchallenges-cat-wiki-homepage.png)
+
+***
 
 ![](devchallenges-cat-wiki-homepage-input-focus.png)
 
+***
+
 ![](devchallenges-cat-wiki-input-search-suggestions.png)
+
+***
 
 ![](on-selection-suggestions-go-away-but-not-submitted.png)
 
+***
+
 ![](american-shorthair-detail-page-1.png)
+
+***
 
 ![](american-shorthair-detail-page-2.png)
 
+***
+
 ![](american-shorthair-detail-1000px-1.png)
+
+***
 
 ![](american-shorthair-detail-1000px-2.png)
 
+***
+
 ![](american-shorthair-detail-mobile-1.png)
+
+***
 
 ![](american-shorthair-detail-mobile-2.png)
 
+***
+
 ![](see-more-page-1.png)
+
+***
 
 ![](see-more-page-2.png)
 
+***
+
 ![](health-benefits-page.png "last sentence typo since fixed")
+
+***
 
 ### Built With
 
@@ -55,7 +87,7 @@
 
 ## Features
 
-This application/site was created as a submission to a [DevChallenges](https://devchallenges.io/challenges) challenge. The [challenge](https://devchallenges.io/challenges/f4NJ53rcfgrP6sBMD2jt) was to build an application to complete the given user stories.
+This application/site was created as a submission to a [DevChallenges](https://devchallenges.io/challenges) challenge. The [challenge](https://legacy.devchallenges.io/challenges/f4NJ53rcfgrP6sBMD2jt) was to build an application to complete the given user stories.
 
 - [x]  I can search for cat breeds and select a breed of my choice
 - [x]  I can see the most popular searched cat breeds summary on the homepage
