@@ -10,6 +10,7 @@
   - [Built With](#built-with)
 - [Features](#features)
 - [Thoughts](#thoughts)
+- [Continued Development](#continued-development)
 - [How to use](#how-to-use)
 - [Useful Resources](#useful-resources)
 
