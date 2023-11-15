@@ -16,67 +16,67 @@
 
 ## Overview
 
-![](homepage-mobile-1.png)
+![](screenshots/homepage-mobile-1.png)
 
 ***
 
-![](homepage-mobile-2.png)
+![](screenshots/homepage-mobile-2.png)
 
 ***
 
-![](mobile-suggestions.png)
+![](screenshots/mobile-suggestions.png)
 
 ***
 
-![](devchallenges-cat-wiki-homepage.png)
+![](screenshots/devchallenges-cat-wiki-homepage.png)
 
 ***
 
-![](devchallenges-cat-wiki-homepage-input-focus.png)
+![](screenshots/devchallenges-cat-wiki-homepage-input-focus.png)
 
 ***
 
-![](devchallenges-cat-wiki-input-search-suggestions.png)
+![](screenshots/devchallenges-cat-wiki-input-search-suggestions.png)
 
 ***
 
-![](on-selection-suggestions-go-away-but-not-submitted.png)
+![](screenshots/on-selection-suggestions-go-away-but-not-submitted.png)
 
 ***
 
-![](american-shorthair-detail-page-1.png)
+![](screenshots/american-shorthair-detail-page-1.png)
 
 ***
 
-![](american-shorthair-detail-page-2.png)
+![](screenshots/american-shorthair-detail-page-2.png)
 
 ***
 
-![](american-shorthair-detail-1000px-1.png)
+![](screenshots/american-shorthair-detail-1000px-1.png)
 
 ***
 
-![](american-shorthair-detail-1000px-2.png)
+![](screenshots/american-shorthair-detail-1000px-2.png)
 
 ***
 
-![](american-shorthair-detail-mobile-1.png)
+![](screenshots/american-shorthair-detail-mobile-1.png)
 
 ***
 
-![](american-shorthair-detail-mobile-2.png)
+![](screenshots/american-shorthair-detail-mobile-2.png)
 
 ***
 
-![](see-more-page-1.png)
+![](screenshots/see-more-page-1.png)
 
 ***
 
-![](see-more-page-2.png)
+![](screenshots/see-more-page-2.png)
 
 ***
 
-![](health-benefits-page.png "typos fixed")
+![](screenshots/health-benefits-page.png "typos fixed")
 
 ***
 
@@ -127,6 +127,7 @@ This application/site was created as a submission to a [DevChallenges](https://d
 - Benefits page could be refactored to use better semantic html i.e. list or dictionary list. 
 - Convert app to use an App directory versus prior pages setup.  
 - Styling tweaks -> not all viewport sizes look good
+- European Burmese still a problem but now the page will not render. 
 
 ## How To Use
 

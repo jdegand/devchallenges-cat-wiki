@@ -5,7 +5,7 @@ import Bubble from "../../components/Bubble";
 export default function Breed({ json, image, otherImages }) {
 
   // have to check if unique and url doesn't match image.url 
-  let otherImagesUrls = otherImages.map(other => other.url)
+  let otherImagesUrls = otherImages.map(other => other.url);
 
   let filtered = otherImagesUrls.filter(x => x !== image.url);
 
@@ -75,7 +75,7 @@ export async function getServerSideProps(context) {
 
   const image = await res2.json();
 
-  const res3 = await fetch(`https://api.thecatapi.com/v1/images/search?limit=6&breed_ids=${json[0]?.id}`)
+  const res3 = await fetch(`https://api.thecatapi.com/v1/images/search?limit=6&breed_ids=${json[0]?.id}`);
 
   const otherImages = await res3.json();
 
