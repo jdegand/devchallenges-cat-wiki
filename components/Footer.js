@@ -1,13 +1,13 @@
-import Image from "next/image";
+import Image from "next/legacy/image";
 
-function Footer(){
+function Footer() {
     return (
-        <footer className="footer">            
+        <footer className="footer">
             <div>
-                <Image src="/CatwikiLogoWhite.svg" alt="" width="128px" height="43px" />
+                <Image src="/CatwikiLogoWhite.svg" alt="" width="128" height="43" />
             </div>
             <div>
-            &#169; created by <a href="https://github.com/jdegand" target="_blank" rel="noreferrer">jdegand</a> - devchallenges.io 2022
+                &#169;<a href="https://github.com/jdegand" target="_blank" rel="noreferrer">jdegand</a> - devchallenges 2022-2023
             </div>
         </footer>
     )

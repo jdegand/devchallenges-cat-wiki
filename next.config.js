@@ -6,9 +6,15 @@ const nextConfig = {
     defaultLocale: 'en-US'
   }, 
   images: {
-    domains: ['cdn2.thecatapi.com'],
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'cdn2.thecatapi.com',
+        port: '',
+        pathname: '/images/**',
+      }
+    ],
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
-    
   },
 }
 

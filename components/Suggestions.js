@@ -2,8 +2,6 @@ import styles from '../styles/Suggestions.module.css'
 
 const Suggestions = (props) => {
 
-    //console.log('suggestionsearch', props.searchTerm)
-
     return (
         <div className={styles.modal}>
             <ul>

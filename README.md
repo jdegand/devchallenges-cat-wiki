@@ -10,6 +10,7 @@
   - [Built With](#built-with)
 - [Features](#features)
 - [Thoughts](#thoughts)
+- [Continued Development](#continued-development)
 - [How to use](#how-to-use)
 - [Useful Resources](#useful-resources)
 
@@ -75,7 +76,7 @@
 
 ***
 
-![](health-benefits-page.png "last sentence typo since fixed")
+![](health-benefits-page.png "typos fixed")
 
 ***
 
@@ -98,7 +99,6 @@ This application/site was created as a submission to a [DevChallenges](https://d
 - [x]  I can go to an article about cats when I click read more on Why you should have a cat section
 - [ ]  I can go to the top 10 cats by clicking see more in the dashboard
 
-
 ## Thoughts 
 
 - Missing design for two pages.  Index page for all breeds and why you should have a cat page.  
@@ -116,6 +116,17 @@ This application/site was created as a submission to a [DevChallenges](https://d
 - Originally, had the Read More and See More links as p tags inside the Link element.  I changed them to buttons so they can be tabbed to.  
 - Similarly, the see more page returned just a list with li tags of all the breeds.  I added buttons there so they could tabbed thru. 
 - Could add padding to the other picture grid and other styling tweaks.  
+- Converting from 12 to 14 -> Image had most breaking changes.  
+- `images.domains` was deprecated.  I replaced it with `images.remotePatterns`.
+- The cat api documentation has improved since I first tackled this challenge.  I could look more into voting for cats and favoriting popular breeds.  Doing it may require logins or a local storage cookie to prevent a single user from voting excessively.  
+
+## Continued Development
+
+- Investigate catapi changes
+- Possible event emitter leak?
+- Benefits page could be refactored to use better semantic html i.e. list or dictionary list. 
+- Convert app to use an App directory versus prior pages setup.  
+- Styling tweaks -> not all viewport sizes look good
 
 ## How To Use
 
@@ -128,9 +139,12 @@ $ git clone https://github.com/jdegand/devchallenges-cat-wiki
 # Install dependencies
 $ npm install
 
+# Before you run the app
+# disable telemetry with `npx next telemetry disable` command
+
 # Add .env.local with API_KEY from thecatapi
 
-# Run the app
+# Run the app and navigate to localhost:3000
 $ npm run dev
 ```
 
@@ -176,3 +190,5 @@ $ npm run dev
 - [YouTube](https://www.youtube.com/watch?v=P7i5YIJRJew) - explicit width and height error in nextjs
 - [Stack Overflow](https://stackoverflow.com/questions/33949469/using-css-modules-how-do-i-define-more-than-one-style-name) - more style name with css modules
 - [Stack Overflow](https://stackoverflow.com/questions/4053220/how-can-i-increase-a-scrollbars-width-using-css) - customize scollbar
+- [Next](https://nextjs.org/docs/messages/next-image-upgrade-to-13) - next image upgrade to 13
+- [Next](https://nextjs.org/docs/pages/api-reference/components/image-legacy#priority) - image legacy priority

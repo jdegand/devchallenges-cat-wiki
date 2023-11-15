@@ -5,14 +5,14 @@ import Link from 'next/link'
 import { useRouter } from 'next/router'
 import Suggestions from '../components/Suggestions'
 
-export default function Home({json}) {
+export default function Home({ json }) {
 
   //const inputRef = createRef();
 
   //console.log('json', JSON.stringify(json, null, 2))
   const breeds = json.map(i => i.name);
 
-  const featuredBreeds = json.filter(function(item) { return ['beng', 'sava', 'norw', 'srex'].indexOf(item.id) != -1 });
+  const featuredBreeds = json.filter(function (item) { return ['beng', 'sava', 'norw', 'srex'].indexOf(item.id) != -1 });
 
   const [searchTerm, setSearchTerm] = useState('')
 
@@ -26,7 +26,7 @@ export default function Home({json}) {
     e.preventDefault()
     //inputRef.current.focus() // so the input's label will not overlap the value of the input
 
-    if(breeds.includes(searchTerm)){
+    if (breeds.includes(searchTerm)) {
       router.push(`/breeds/breed?searchTerm=${searchTerm}`)
     } else {
       alert('No such breed')
@@ -44,18 +44,18 @@ export default function Home({json}) {
     <>
       <div className={styles.container}>
         <div className={styles.searchDiv}>
-          <Image src="/CatwikiLogoWhite.svg" alt="" width="400px" height="200px" />
+          <Image src="/CatwikiLogoWhite.svg" alt="" width="400" height="200" />
           <h1 className={styles.marginEnd}>Get to know more about your cat breed</h1>
           <form onSubmit={handleSubmit}>
             <div className={styles.floatingGroup}>
               <input className={styles.searchInput} id="search" maxLength={35} onChange={handleSearch} required />
               <label className={styles.floatingLabel} htmlFor="search">Enter your breed</label>
-              <button className={styles.searchBtn} aria-label="Search" title="Search"><Image src="/magnify.svg" alt="" width="24px" height="24px"/></button>
+              <button className={styles.searchBtn} aria-label="Search" title="Search"><Image src="/magnify.svg" alt="" width="24" height="24" /></button>
             </div>
           </form>
           {searchTerm.length >= 1 && <Suggestions breeds={breeds} searchTerm={searchTerm} handleClick={handleSuggestion} />}
         </div>
-        <section className={styles.breedSection}> 
+        <section className={styles.breedSection}>
           <p>Most Searched Breeds</p>
           <div className={styles.brownLine}></div>
           <div className={styles.discoverBreeds}>
@@ -69,10 +69,10 @@ export default function Home({json}) {
               featuredBreeds.map(breed => {
                 return (
                   <Link href={`/breeds/breed?searchTerm=${breed.name}`}>
-                  <div className={styles.breedDiv} key={breed.image.id}>
-                    <Image className={styles.breedImage} src={breed.image.url} width="250px" height="250px" />
-                    <div>{breed.name}</div>
-                  </div>
+                    <div className={styles.breedDiv} key={breed.image.id}>
+                      <Image className={styles.breedImage} src={breed.image.url} width="250" height="250" />
+                      <div>{breed.name}</div>
+                    </div>
                   </Link>
                 )
               })
@@ -89,9 +89,9 @@ export default function Home({json}) {
             </Link>
           </div>
           <div className={styles.imageGrid}>
-            <div className={styles.image1}><Image src="/image-2.png" alt="" width="400px" height="200px" objectFit="fill" /></div>
-            <div className={styles.image2}><Image src="/image-3.png" alt="" width="200px" height="450px" objectFit="fill" /></div>
-            <div className={styles.image3}><Image src="/image-1.png" alt="" width="300px" height="400px" objectFit="fill" /></div>
+            <div className={styles.image1}><Image src="/image-2.png" alt="" width="400" height="200" objectFit="fill" /></div>
+            <div className={styles.image2}><Image src="/image-3.png" alt="" width="200" height="450" objectFit="fill" /></div>
+            <div className={styles.image3}><Image src="/image-1.png" alt="" width="300" height="400" objectFit="fill" /></div>
           </div>
         </section>
       </div>
@@ -111,6 +111,6 @@ export async function getServerSideProps(context) {
   const json = await res.json();
 
   return {
-    props: {json},
+    props: { json },
   }
 }
