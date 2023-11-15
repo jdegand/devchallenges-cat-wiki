@@ -18,11 +18,6 @@
     margin-block-end: 50px;
 }
 
-.breedBtn {
-    background: transparent;
-    border: none;
-}
-
 @media (max-width: 800px) {
     .breedGrid {
         grid-template-columns: 1fr 1fr;

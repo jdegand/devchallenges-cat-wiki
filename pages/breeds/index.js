@@ -12,7 +12,7 @@ export default function Breeds() {
                 {breeds.map(breed => {
                     return (
                         <Link href={`/breeds/breed?searchTerm=${breed}`} key={breed}>
-                            <li className={styles.breed}><button className={styles.breedBtn}>{breed}</button></li>
+                            <li className={styles.breed}>{breed}</li>
                         </Link>
                     )
                 })}
