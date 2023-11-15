@@ -119,6 +119,7 @@ This application/site was created as a submission to a [DevChallenges](https://d
 - Converting from 12 to 14 -> Image had most breaking changes.  
 - `images.domains` was deprecated.  I replaced it with `images.remotePatterns`.
 - The cat api documentation has improved since I first tackled this challenge.  I could look more into voting for cats and favoriting popular breeds.  Doing it may require logins or a local storage cookie to prevent a single user from voting excessively.  
+- Next 14 supports node 16 til early 2024 and then you will need node 18.  
 
 ## Continued Development
 
@@ -131,7 +132,7 @@ This application/site was created as a submission to a [DevChallenges](https://d
 
 ## How To Use
 
-To clone and run this application, you'll need [Git](https://git-scm.com) and [Node.js](https://nodejs.org/en/download/) (which comes with [npm](http://npmjs.com)) installed on your computer. From your command line:
+To clone and run this application, you'll need [Git](https://git-scm.com) and [Node.js Version 18+](https://nodejs.org/en/download/) (which comes with [npm](http://npmjs.com)) installed on your computer. From your command line:
 
 ```bash
 # Clone this repository
@@ -193,3 +194,6 @@ $ npm run dev
 - [Stack Overflow](https://stackoverflow.com/questions/4053220/how-can-i-increase-a-scrollbars-width-using-css) - customize scollbar
 - [Next](https://nextjs.org/docs/messages/next-image-upgrade-to-13) - next image upgrade to 13
 - [Next](https://nextjs.org/docs/pages/api-reference/components/image-legacy#priority) - image legacy priority
+- [Github](https://github.com/AdenForshaw/theCatAPI-website) - theCatApi website
+- [Github](https://github.com/AdenForshaw/theCatApi-examples) - theCatApi examples
+- [YouTube](https://www.youtube.com/watch?v=YQMSietiFm0) - Incrementally adopt the Next.js App Router

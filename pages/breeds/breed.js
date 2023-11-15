@@ -53,6 +53,8 @@ export async function getServerSideProps(context) {
 
   const searchTerm = context.query.searchTerm ?? "";
 
+  // This search will not work for European Burmese
+  // thecatapi error doesn't return back json but a string `Couldn't find ...`
   const res = await fetch(`https://api.thecatapi.com/v1/breeds/search?q=${searchTerm}`, {
     method: 'GET',
     headers: {
