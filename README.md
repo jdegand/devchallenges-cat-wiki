@@ -197,3 +197,5 @@ $ npm run dev
 - [Github](https://github.com/AdenForshaw/theCatAPI-website) - theCatApi website
 - [Github](https://github.com/AdenForshaw/theCatApi-examples) - theCatApi examples
 - [YouTube](https://www.youtube.com/watch?v=YQMSietiFm0) - Incrementally adopt the Next.js App Router
+- [Reddit](https://www.reddit.com/r/nextjs/comments/xehv28/what_is_the_correct_way_to_handle_errors_inside/?rdt=45064) - what is the correct way to handle errors inside getServerSideProps
+- [Next](https://nextjs.org/docs/pages/api-reference/functions/get-server-side-props#redirect) - get server side props redirect

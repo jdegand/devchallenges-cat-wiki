@@ -64,9 +64,27 @@ export async function getServerSideProps(context) {
 
   const json = await res.json();
 
-  // Thought about avoiding this request using the previous returned data to create the image url 
-  // All Image urls structured  https://cdn2.thecatapi.com/images/${json[0].id}.(jpg || png)
-  // Pictures are not all jpg or png - have to handle
+  /*
+  // not a great user experience
+  // user doesn't know why search doesn't work for cat with an empty res
+
+  if(!json.length){
+    return {
+      redirect: {
+        destination: '/',
+        permanent: false,
+      },
+    }
+  }
+  */
+
+  // could do separate requests inside this condition
+  // add a default placeholder main image and conditionally show that in html?
+  if (!json.length) {
+    return {
+      notFound: true,
+    }
+  }
 
   const res2 = await fetch(`https://api.thecatapi.com/v1/images/${json[0]?.reference_image_id}`, {
     method: 'GET',
@@ -74,6 +92,10 @@ export async function getServerSideProps(context) {
       "x-api-key": process.env.API_KEY
     }
   })
+
+  // Thought about avoiding this request using the previous returned data to create the image url 
+  // All Image urls structured  https://cdn2.thecatapi.com/images/${json[0].id}.(jpg || png)
+  // Pictures are not all jpg or png - have to handle
 
   const image = await res2.json();
 
