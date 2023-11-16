@@ -120,6 +120,10 @@ This application/site was created as a submission to a [DevChallenges](https://d
 - `images.domains` was deprecated.  I replaced it with `images.remotePatterns`.
 - The cat api documentation has improved since I first tackled this challenge.  I could look more into voting for cats and favoriting popular breeds.  Doing it may require logins or a local storage cookie to prevent a single user from voting excessively.  
 - Next 14 supports node 16 til early 2024 and then you will need node 18.  
+- I decided not to add TypeScript when converting to App Router.  Next docs have typescript as the default in the code examples.  
+- I followed this [guide](https://nextjs.org/docs/app/building-your-application/upgrading/app-router-migration) to convert to App Router.  
+- Without adding a head.js file, can you change the favicon?  I think you can just put a favicon.ico file in the app folder but the devchallenges favicon I had used is a png file.  
+- When copying pages over to the App router, it is best to name them slightly different.   This allows you keep your original page as conflicts prevent the app from running.  Then you navigate to the route manually and you can compare and contrast and you don't lose your page functionality.  
 
 ## Continued Development
 
@@ -129,6 +133,8 @@ This application/site was created as a submission to a [DevChallenges](https://d
 - Convert app to use an App directory versus prior pages setup.  
 - Styling tweaks -> not all viewport sizes look good
 - European Burmese still a problem but now the page will not render. 
+- Typescript ?
+- Need to run a lint -> semicolon consistency 
 
 ## How To Use
 
@@ -199,3 +205,4 @@ $ npm run dev
 - [YouTube](https://www.youtube.com/watch?v=YQMSietiFm0) - Incrementally adopt the Next.js App Router
 - [Reddit](https://www.reddit.com/r/nextjs/comments/xehv28/what_is_the_correct_way_to_handle_errors_inside/?rdt=45064) - what is the correct way to handle errors inside getServerSideProps
 - [Next](https://nextjs.org/docs/pages/api-reference/functions/get-server-side-props#redirect) - get server side props redirect
+- [Next](https://nextjs.org/docs/app/api-reference/functions/use-router) - useRouter

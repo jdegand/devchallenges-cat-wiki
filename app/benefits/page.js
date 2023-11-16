@@ -1,4 +1,8 @@
-import styles from '../styles/Benefits.module.css'
+import styles from './benefits.module.css'
+
+export const metadata = {
+    title: 'Benefits(?) of Cat Ownership'
+}
 
 export default function Benefits() {
     return (

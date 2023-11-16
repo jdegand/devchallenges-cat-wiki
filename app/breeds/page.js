@@ -1,5 +1,9 @@
-import styles from '../../styles/Breeds.module.css'
 import Link from 'next/link'
+import styles from './breeds.module.css'
+
+export const metadata = {
+    title: 'All Cat Breeds'
+}
 
 export default function Breeds() {
 
