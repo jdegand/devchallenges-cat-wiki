@@ -124,13 +124,21 @@ This application/site was created as a submission to a [DevChallenges](https://d
 - I followed this [guide](https://nextjs.org/docs/app/building-your-application/upgrading/app-router-migration) to convert to App Router.  
 - Without adding a head.js file, can you change the favicon?  I think you can just put a favicon.ico file in the app folder but the devchallenges favicon I had used is a png file.  
 - When copying pages over to the App router, it is best to name them slightly different.   This allows you keep your original page as conflicts prevent the app from running.  Then you navigate to the route manually and you can compare and contrast and you don't lose your page functionality.  
+- You can't utilize useSearchParams with server-side data loading. 
+- This means you have to add 'use client' and use a useEffect to load data with the searchTerm. 
+- This is a lose-lose situation as useEffect is slower for data fetching and you have worry about memory leaks and possibly add a cleanup function.   
+- Also, useEffect is not really ideal for multiple requests.
+- You need to add Suspense when using useSearchParams.
+- You have to check that your state is truthy and conditionally render your data because next more likely than not will throw an error before your state updates and causes a re-render.   
+- Client side rendering seems *way* slower than normal react.  
+- I don't really want to totally refactor the app so I looked into leaving pages just for the breed detail page.  
+- If you leave the breed page file, the styling is broken since the layout does not carry over.  Add the navbar and footer to the breed page?
 
 ## Continued Development
 
 - Investigate catapi changes
 - Possible event emitter leak?
 - Benefits page could be refactored to use better semantic html i.e. list or dictionary list. 
-- Convert app to use an App directory versus prior pages setup.  
 - Styling tweaks -> not all viewport sizes look good
 - European Burmese still a problem but now the page will not render. 
 - Typescript ?
@@ -206,3 +214,5 @@ $ npm run dev
 - [Reddit](https://www.reddit.com/r/nextjs/comments/xehv28/what_is_the_correct_way_to_handle_errors_inside/?rdt=45064) - what is the correct way to handle errors inside getServerSideProps
 - [Next](https://nextjs.org/docs/pages/api-reference/functions/get-server-side-props#redirect) - get server side props redirect
 - [Next](https://nextjs.org/docs/app/api-reference/functions/use-router) - useRouter
+- [FreeCodeCamp](https://forum.freecodecamp.org/t/javascript-fetch-chain-synchronous/295890) - fetch chain
+- [Reddit](https://www.reddit.com/r/nextjs/comments/13kwcax/the_app_router_is_not_productionready_yet/) - app router is not production ready yet 

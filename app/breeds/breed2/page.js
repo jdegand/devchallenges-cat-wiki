@@ -1,7 +1,59 @@
-import { useSearchParams } from 'next/navigation'
-import Bubble from "../../../components/Bubble";
-import Image from "next/legacy/image";
+'use client'
 
+import { useSearchParams } from 'next/navigation'
+import Bubble from "../../../components/Bubble"
+import styles from './bubble.module.css'
+
+import { useState, useEffect, Suspense } from 'react'
+
+export default function Breed2() {
+
+  const [json, setJson] = useState(null)
+
+  const searchParams = useSearchParams()
+
+  const searchTerm = searchParams.get('searchTerm')
+
+  useEffect(() => {
+
+    fetch(`https://api.thecatapi.com/v1/breeds/search?q=${searchTerm}`, {
+      method: 'GET',
+      headers: {
+        "x-api-key": process.env.API_KEY
+      }
+    })
+      .then((res) => res.json())
+      .then((json) => {
+        setJson(json)
+      })
+  }, [])
+
+  return (
+    <main>
+      <Suspense fallback={<h1>Loading</h1>}>
+        <div className={styles.topGrid}>
+          {json &&<section>
+            <h1>{json[0].name}</h1>
+            <p className={styles.description}>{json[0].description}</p>
+            <h2>Termperament: {json[0].temperament}</h2>
+            <h2>Origin: {json[0].origin}</h2>
+            <h2>Life Span: {json[0].life_span} years</h2>
+            <h2 className={styles.bubbleGrid}>Adaptability: <Bubble count={json && json[0].adaptability} /></h2>
+            <h2 className={styles.bubbleGrid}>Affection Level: <Bubble count={json && json[0].affection_level} /></h2>
+            <h2 className={styles.bubbleGrid}>Child Friendly: <Bubble count={json && json[0].child_friendly} /></h2>
+            <h2 className={styles.bubbleGrid}>Grooming: <Bubble count={json && json[0].grooming} /></h2>
+            <h2 className={styles.bubbleGrid}>Intelligence: <Bubble count={json && json[0].intelligence} /></h2>
+            <h2 className={styles.bubbleGrid}>Health Issues: <Bubble count={json && json[0].health_issues} /></h2>
+            <h2 className={styles.bubbleGrid}>Social Needs: <Bubble count={json && json[0].social_needs} /></h2>
+            <h2 className={styles.bubbleGrid}>Stranger Friendly: <Bubble count={json && json[0].stranger_friendly} /></h2>
+          </section>}
+        </div>
+      </Suspense>
+    </main>
+  )
+}
+
+/*
 export function Breed2({ json, image, otherImages }) {
 
   // have to check if unique and url doesn't match image.url 
@@ -48,7 +100,9 @@ export function Breed2({ json, image, otherImages }) {
     </main>
   )
 }
+*/
 
+/*
 async function getBreedBySearchTerm() {
   //const searchTerm = context.query.searchTerm ?? "";
 
@@ -81,22 +135,14 @@ async function getHeroImage(json){
 }
 
 async function getOtherImages(json){
-  const res3 = await fetch(`https://api.thecatapi.com/v1/images/search?limit=6&breed_ids=${json[0]?.id}`);
-
+  const res3 = await fetch(`https://api.thecatapi.com/v1/images/search?limit=6&breed_ids=${json[0]?.id}`, {
+    method: 'GET',
+    headers: {
+      "x-api-key": process.env.API_KEY
+    }
+  });
   const otherImages = await res3.json();
   return otherImages;
 }
 
-export default async function getSingleBreedData() {
-
-  const json = await getBreedBySearchTerm()
-
-  
-  //const image = await getHeroImage(json)
-
-  //const otherImages = await getOtherImages(json)
-
-  // return <Breed2 json={json} image={image} otherImages={otherImages} />
-
-  return <Breed2 json={json} image={image} otherImages={otherImages} />
-}
+*/

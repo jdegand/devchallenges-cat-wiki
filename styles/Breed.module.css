@@ -43,7 +43,7 @@
     }
 }
 
-@media (min-width: 1201px){
+@media (min-width: 1201px) {
     .topGrid {
         grid-template-columns: 600px 1fr;
         align-items: center;
