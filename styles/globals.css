@@ -84,6 +84,13 @@ span {
   /* Image tag wrapper - the background image even with negative image gets wrapped in a span that blocks clicks */
 }
 
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 30px;
+}
+
 .footer {
   display: flex;
   flex: 1 1;

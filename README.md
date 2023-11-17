@@ -132,7 +132,7 @@ This application/site was created as a submission to a [DevChallenges](https://d
 - You have to check that your state is truthy and conditionally render your data because next more likely than not will throw an error before your state updates and causes a re-render.   
 - Client side rendering seems *way* slower than normal react.  
 - I don't really want to totally refactor the app so I looked into leaving pages just for the breed detail page.  
-- If you leave the breed page file, the styling is broken since the layout does not carry over.  Add the navbar and footer to the breed page?
+- If you leave the breed page file, the styling is broken since the layout does not carry over.  Add the navbar and footer to the breed page? No. Need to keep your `pages/_app.js` file.  
 
 ## Continued Development
 
@@ -216,3 +216,4 @@ $ npm run dev
 - [Next](https://nextjs.org/docs/app/api-reference/functions/use-router) - useRouter
 - [FreeCodeCamp](https://forum.freecodecamp.org/t/javascript-fetch-chain-synchronous/295890) - fetch chain
 - [Reddit](https://www.reddit.com/r/nextjs/comments/13kwcax/the_app_router_is_not_productionready_yet/) - app router is not production ready yet 
+- [Stack Overflow](https://stackoverflow.com/questions/76609481/how-to-apply-global-css-styles-to-pages-folder-in-next-13) - how to apply global css styles to pages folder in next 13

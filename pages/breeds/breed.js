@@ -1,8 +1,6 @@
 import Image from "next/legacy/image";
 import styles from '../../styles/Breed.module.css'
 import Bubble from "../../components/Bubble";
-import Header from "../../components/Header"
-import Footer from "../../components/Footer"
 
 // The app router global styling doesn't carry over to this component 
 // and it seems like the globals.css file is not being used either.
@@ -17,8 +15,6 @@ export default function Breed({ json, image, otherImages }) {
   otherImagesUrls = Array.from(new Set(filtered));
 
   return (
-    <>
-    <Header />
     <main>
       <div className={styles.topGrid}>
         <div>
@@ -53,8 +49,6 @@ export default function Breed({ json, image, otherImages }) {
         </div>
       </section>
       </main>
-      <Footer />
-    </>
   )
 }
 
