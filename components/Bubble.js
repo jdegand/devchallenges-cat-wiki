@@ -1,5 +1,5 @@
 import React from "react";
-import styles from '../styles/Bubble.module.css'
+import styles from '../styles/Bubble.module.css';
 
 const Bubble = props => {
 

@@ -1,26 +1,26 @@
-'use client'
+'use client';
 
 // need to look up how to change title in a client page
 
-import { useSearchParams } from 'next/navigation'
-import Bubble from "../../../components/Bubble"
-import styles from './bubble.module.css'
-import Image from 'next/legacy/image'
+import { useSearchParams } from 'next/navigation';
+import Bubble from "../../../components/Bubble";
+import styles from './bubble.module.css';
+import Image from 'next/legacy/image';
 
-import { useState, useEffect, Suspense } from 'react'
+import { useState, useEffect, Suspense } from 'react';
 
 export default function Breed2() {
 
-  const [json, setJson] = useState(null)
-  const [image, setImage] = useState(null)
-  const [otherImageUrls, setOtherImageUrls] = useState(null)
+  const [json, setJson] = useState(null);
+  const [image, setImage] = useState(null);
+  const [otherImageUrls, setOtherImageUrls] = useState(null);
 
   // const controller = new AbortController()
   // Adding controller causes problems ?
 
-  const searchParams = useSearchParams()
+  const searchParams = useSearchParams();
 
-  const searchTerm = searchParams.get('searchTerm')
+  const searchTerm = searchParams.get('searchTerm');
 
   useEffect(() => {
 

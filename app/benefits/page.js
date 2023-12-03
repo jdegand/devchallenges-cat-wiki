@@ -1,4 +1,4 @@
-import styles from './benefits.module.css'
+import styles from './benefits.module.css';
 
 export const metadata = {
     title: 'Benefits(?) of Cat Ownership'

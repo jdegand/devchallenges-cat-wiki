@@ -1,4 +1,4 @@
-import HomePage from './home-page'
+import HomePage from './home-page';
 
 async function getBreeds() {
     const res = await fetch('https://api.thecatapi.com/v1/breeds', {
@@ -7,13 +7,13 @@ async function getBreeds() {
             "x-api-key": process.env.API_KEY
         }
     })
-    const breeds = await res.json()
-    return breeds
+    const breeds = await res.json();
+    return breeds;
 }
 
 export default async function Page() {
     // Fetch data directly in a Server Component
-    const recentBreeds = await getBreeds()
+    const recentBreeds = await getBreeds();
     // Forward fetched data to your Client Component
-    return <HomePage json={recentBreeds} />
+    return <HomePage json={recentBreeds} />;
 }

@@ -1,11 +1,11 @@
-'use client'
+'use client';
 
-import styles from './home.module.css'
-import Image from 'next/legacy/image'
-import { useState } from 'react'
-import Link from 'next/link'
-import { useRouter } from 'next/navigation'
-import Suggestions from '../components/Suggestions'
+import styles from './home.module.css';
+import Image from 'next/legacy/image';
+import { useState } from 'react';
+import Link from 'next/link';
+import { useRouter } from 'next/navigation';
+import Suggestions from '../components/Suggestions';
 
 export default function HomePage({ json }) {
 
@@ -13,23 +13,23 @@ export default function HomePage({ json }) {
 
   const featuredBreeds = json.filter(function (item) { return ['beng', 'sava', 'norw', 'srex'].indexOf(item.id) != -1 });
 
-  const [searchTerm, setSearchTerm] = useState('')
+  const [searchTerm, setSearchTerm] = useState('');
   const [toggle, setToggle] = useState(true);
 
   const router = useRouter(); // need to investigate if I need to replace or amend this
 
   const handleSearch = (e) => {
-    setToggle(true)
-    setSearchTerm(e.target.value)
+    setToggle(true);
+    setSearchTerm(e.target.value);
   }
 
   const handleSubmit = (e) => {
-    e.preventDefault()
+    e.preventDefault();
 
     if (breeds.includes(searchTerm)) {
-      router.push(`/breeds/breed?searchTerm=${searchTerm}`)
+      router.push(`/breeds/breed?searchTerm=${searchTerm}`);
     } else {
-      alert(`${searchTerm} not found`)
+      alert(`${searchTerm} not found`);
     }
   }
 
@@ -44,7 +44,6 @@ export default function HomePage({ json }) {
       <div className={styles.container}>
         <div className={styles.searchDiv}>
           <Image className={styles.bgImage} src="/HeroImage-md.png" alt="" layout="fill" priority />
-
           <Image src="/CatwikiLogoWhite.svg" alt="" width="300" height="200" layout="fixed" priority />
           <h1 className={styles.marginEnd}>Get to know more about your cat breed</h1>
           <form onSubmit={handleSubmit}>
