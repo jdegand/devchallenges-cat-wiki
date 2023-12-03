@@ -128,6 +128,7 @@ This application/site was created as a submission to a [DevChallenges](https://d
 - This is a lose-lose situation as useEffect is slower for data fetching and you have worry about memory leaks and possibly add a cleanup function.   
 - You need to add Suspense when using useSearchParams.  Next will throw an error before your state updates and causes a re-render.    
 - I incremently added all pages to the app router.  I delete the `pages/_app.js` file and the remaining breed page did not have the correct styling and layout.  It is important to keep your `pages/_app.js` file when whenever you are using any pages files.    
+- I needed to use `encodeURI` on the breed names inside the `Link` hrefs.  Spaces are not allowed inside a `Link` hrefs.  
 
 ## Continued Development
 
@@ -135,8 +136,7 @@ This application/site was created as a submission to a [DevChallenges](https://d
 - Benefits page could be refactored to use better semantic html i.e. list or dictionary list. 
 - Styling tweaks -> not all viewport sizes look good
 - European Burmese is missing a main image.  This causes an API request failure which prevents the page from showing anything. 
-- Typescript ?
-- Problem with href if breed has multiple names as space is not allowed in link tags -> need to do a regex and add `%20` ?
+- Typescript ?  
 
 ## How To Use
 
@@ -215,3 +215,4 @@ $ npm run dev
 - [Next](https://nextjs.org/docs/app/building-your-application/data-fetching/patterns) - data fetching patterns
 - [Stack Overflow](https://stackoverflow.com/questions/6393827/can-i-nest-a-button-element-inside-an-a-using-html5) - can I nest a button element element inside an a tag using HTML5?
 - [Github](https://github.com/vercel/next.js/discussions/13125) - next link tag accessibility concerns
+- [MDN Docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/encodeURI) - encodeURI

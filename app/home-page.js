@@ -68,7 +68,7 @@ export default function HomePage({ json }) {
             {
               featuredBreeds.map(breed => {
                 return (
-                  <Link href={`/breeds/breed?searchTerm=${breed.name}`} key={breed.image.id} passHref={true}>
+                  <Link href={`/breeds/breed?searchTerm=${encodeURI(breed.name)}`} key={breed.image.id} passHref={true}>
                     <div className={styles.breedDiv}>
                       <Image className={styles.breedImage} src={breed.image.url} alt="" width="250" height="250" />
                       <div>{breed.name}</div>
