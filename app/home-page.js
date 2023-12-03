@@ -70,7 +70,7 @@ export default function HomePage({ json }) {
                 return (
                   <Link href={`/breeds/breed?searchTerm=${breed.name}`} key={breed.image.id}>
                     <div className={styles.breedDiv}>
-                      <Image className={styles.breedImage} src={breed.image.url} width="250" height="250" />
+                      <Image className={styles.breedImage} src={breed.image.url} alt="" width="250" height="250" />
                       <div>{breed.name}</div>
                     </div>
                   </Link>

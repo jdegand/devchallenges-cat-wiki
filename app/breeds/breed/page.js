@@ -78,7 +78,7 @@ export default function Breed2() {
 
     fetchBreedData();
 
-  }, [])
+  }, [searchTerm])
 
   return (
     <main>

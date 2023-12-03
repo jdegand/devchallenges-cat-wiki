@@ -101,56 +101,48 @@ This application/site was created as a submission to a [DevChallenges](https://d
 
 ## Thoughts 
 
-- Missing design for two pages.  Index page for all breeds and why you should have a cat page.  
-- Unclear on how to get top ten most popular breeds.  
-- Can't search for multiple breeds at once on the api.  Have to use a promise.all() / multiple fetches to get each breed needed ie /breeds/search?q=beng
-- You can get 4 random images with image search and limit parameter but it is random and some pictures don't make sense for the design.  Plus image search gives you no idea of the breed etc.  
+- DevChallenges did not add design for two pages: breeds index page and `why you should have a cat` page.  
+- Can't search for multiple breeds at once on the api.  Have to use a promise.all() / multiple fetches to get each breed needed i.e. `/breeds/search?q=beng`.
+- You can get 4 random images with image search and the limit parameter, but it is random and some pictures don't make sense for the design.  Plus image search gives you no idea of the breed etc.  
 - Image component has a lot of quirks and things to be mindful of.  Responsive image optimization is a nightmare.  It shouldn't be this unclear to do things that are extremely easy to do in basic html code. Adding a srcSet to the Image component is not really covered.  Having multiple images is not really necessary with the Image component.  So do you use the largest image exclusively? Next does scale down.  Can it scale up from a medium sized image? 
 - I used layout="responsive" and under tablet sizes, the background became too small when there was more space available.  You have to set image sizes in the config for device sizes that are not default values.  
-- Have to worry about duplicate pictures in the other images section
-- Aegean has same picture with different ids which shows up in the other images section
-- Use a ref initially to try and prevent the label from overlapping the text of the input on blur
+- You have to worry about duplicate pictures in the other images section.  
+- `Aegean` has same picture with different ids which shows up in the other images section.
+- You can use a ref to try and prevent the label from overlapping the text of the input on blur.
 - Fixed overlapping by using valid pseudo-selector on the input in the css
 - Using a layout - caused problems with styling.  The min-height of 100vh in globals.css seems not to have be applied.  The benefits page's footer was not at the bottom of the page.
-- Problem with European Burmese -> doesn't have reference_image_id.  So top image is missing.  
-- Originally, had the Read More and See More links as p tags inside the Link element.  I changed them to buttons so they can be tabbed to.  
-- Similarly, the see more page returned just a list with li tags of all the breeds.  I added buttons there so they could tabbed thru. 
-- Could add padding to the other picture grid and other styling tweaks.  
+- Problem with European Burmese -> doesn't have reference_image_id.  Top image is missing.  
+- Originally, had the Read More and See More links as p tags inside the Link element.  I changed them to buttons so they can be tabbable.  
+- Similarly, I added buttons to breeds list page so they can easily tabbed through as well.   
 - Converting from 12 to 14 -> Image had most breaking changes.  
 - `images.domains` was deprecated.  I replaced it with `images.remotePatterns`.
 - The cat api documentation has improved since I first tackled this challenge.  I could look more into voting for cats and favoriting popular breeds.  Doing it may require logins or a local storage cookie to prevent a single user from voting excessively.  
 - Next 14 supports node 16 til early 2024 and then you will need node 18.  
-- I decided not to add TypeScript when converting to App Router.  Next docs have typescript as the default in the code examples.  
+- I decided not to add TypeScript when converting to App Router.
 - I followed this [guide](https://nextjs.org/docs/app/building-your-application/upgrading/app-router-migration) to convert to App Router.  
 - Without adding a head.js file, can you change the favicon?  I think you can just put a favicon.ico file in the app folder but the devchallenges favicon I had used is a png file.  
-- When copying pages over to the App router, it is best to name them slightly different.   This allows you keep your original page as conflicts prevent the app from running.  Then you navigate to the route manually and you can compare and contrast and you don't lose your page functionality.  
+- When copying pages over to the App router, it is best to name them slightly different.   This allows you keep your original page as naming conflicts will prevent the app from running.  
 - You can't utilize useSearchParams with server-side data loading. 
 - This means you have to add 'use client' and use a useEffect to load data with the searchTerm. 
 - This is a lose-lose situation as useEffect is slower for data fetching and you have worry about memory leaks and possibly add a cleanup function.   
-- Also, useEffect is not really ideal for multiple requests.
-- You need to add Suspense when using useSearchParams.
-- You have to check that your state is truthy and conditionally render your data because next more likely than not will throw an error before your state updates and causes a re-render.   
-- Client side rendering seems *way* slower than normal react.  
-- I don't really want to totally refactor the app so I looked into leaving pages just for the breed detail page.  
-- If you leave the breed page file, the styling is broken since the layout does not carry over.  Add the navbar and footer to the breed page? No. Need to keep your `pages/_app.js` file.  
+- You need to add Suspense when using useSearchParams.  Next will throw an error before your state updates and causes a re-render.    
+- I incremently added all pages to the app router.  I delete the `pages/_app.js` file and the remaining breed page did not have the correct styling and layout.  It is important to keep your `pages/_app.js` file when whenever you are using any pages files.    
 
 ## Continued Development
 
 - Investigate catapi changes
-- Possible event emitter leak?
 - Benefits page could be refactored to use better semantic html i.e. list or dictionary list. 
 - Styling tweaks -> not all viewport sizes look good
-- European Burmese still a problem but now the page will not render. 
+- European Burmese is missing a main image.  This causes an API request failure which prevents the page from showing anything. 
 - Typescript ?
-- Need to run a lint -> semicolon consistency 
 
 ## How To Use
 
-To clone and run this application, you'll need [Git](https://git-scm.com) and [Node.js Version 18+](https://nodejs.org/en/download/) (which comes with [npm](http://npmjs.com)) installed on your computer. From your command line:
+To clone and run this application, you'll need [Git](https://git-scm.com) and [Node.js (v18+)](https://nodejs.org/en/download/) (which comes with [npm](http://npmjs.com)) installed on your computer. From your command line:
 
 ```bash
 # Clone this repository
-$ git clone https://github.com/jdegand/devchallenges-cat-wiki
+$ git clone -b app-router-migration --single-branch https://github.com/jdegand/devchallenges-cat-wiki
 
 # Install dependencies
 $ npm install
