@@ -15,7 +15,7 @@ export default function Breeds() {
             <ul className={styles.breedGrid}>
                 {breeds.map(breed => {
                     return (
-                        <Link href={`/breeds/breed?searchTerm=${breed}`} key={breed}>
+                        <Link href={`/breeds/breed?searchTerm=${breed}`} key={breed} passHref={true}>
                             <li className={styles.breed}>{breed}</li>
                         </Link>
                     )

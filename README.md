@@ -114,7 +114,7 @@ This application/site was created as a submission to a [DevChallenges](https://d
 - Problem with European Burmese -> doesn't have reference_image_id.  Top image is missing.  
 - Originally, had the Read More and See More links as p tags inside the Link element.  I changed them to buttons so they can be tabbable.  
 - Similarly, I added buttons to breeds list page so they can easily tabbed through as well. 
-- However, this is problematic as having a button inside an `<a>` tag is illegal in HTML5.  I might have to refactor to style the links as buttons.    
+- However, this is problematic as having a button inside an `<a>` tag is illegal in HTML5.  You need to `baseHref={true}` to the `<Link>` tag so the links will be tabbable.  [See Github for more](https://github.com/vercel/next.js/discussions/13125).
 - Converting from 12 to 14 -> Image had most breaking changes.  
 - `images.domains` was deprecated.  I replaced it with `images.remotePatterns`.
 - The cat api documentation has improved since I first tackled this challenge.  I could look more into voting for cats and favoriting popular breeds.  Doing it may require logins or a local storage cookie to prevent a single user from voting excessively.  
@@ -214,3 +214,4 @@ $ npm run dev
 - [Stack Overflow](https://stackoverflow.com/questions/73114731/multiple-fetch-in-useeffect-fetch-data-depend-on-another-fetch-data) - multiple fetch in useEffect fetch data depend on another fetch data
 - [Next](https://nextjs.org/docs/app/building-your-application/data-fetching/patterns) - data fetching patterns
 - [Stack Overflow](https://stackoverflow.com/questions/6393827/can-i-nest-a-button-element-inside-an-a-using-html5) - can I nest a button element element inside an a tag using HTML5?
+- [Github](https://github.com/vercel/next.js/discussions/13125) - next link tag accessibility concerns
