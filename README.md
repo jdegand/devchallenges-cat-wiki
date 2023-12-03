@@ -101,42 +101,43 @@ This application/site was created as a submission to a [DevChallenges](https://d
 
 ## Thoughts 
 
-- DevChallenges did not add design for two pages: breeds index page and `why you should have a cat` page.  
-- Can't search for multiple breeds at once on the api.  Have to use a promise.all() / multiple fetches to get each breed needed i.e. `/breeds/search?q=beng`.
-- You can get 4 random images with image search and the limit parameter, but it is random and some pictures don't make sense for the design.  Plus image search gives you no idea of the breed etc.  
-- Image component has a lot of quirks and things to be mindful of.  Responsive image optimization is a nightmare.  It shouldn't be this unclear to do things that are extremely easy to do in basic html code. Adding a srcSet to the Image component is not really covered.  Having multiple images is not really necessary with the Image component.  So do you use the largest image exclusively? Next does scale down.  Can it scale up from a medium sized image? 
-- I used layout="responsive" and under tablet sizes, the background became too small when there was more space available.  You have to set image sizes in the config for device sizes that are not default values.  
+- DevChallenges did not add a design for two pages: the breeds index page and the `why you should have a cat` page.  
+- You can't search for multiple breeds at once on the API.  You have to use a promise.all() / multiple fetches to get each breed needed, i.e. `/breeds/search?q=beng`.
+- You can get 4 random images with image search and the limit parameter, but it is random, and some pictures don't make sense for the design.  Plus, image search gives you no idea of the breed etc.  
+- Image component has a lot of quirks and things to be mindful of.  Responsive image optimization is a nightmare.  It shouldn't be this unclear to do things that are extremely easy to do in basic HTML code. Adding a srcSet to the Image component is not really covered.  Having multiple images is not really necessary with the Image component.  So do you use the largest image exclusively? Next does scale down.  Can it scale up from a medium-sized image? 
+- There have been many updates to Next Image since I first did this challenge.  I need to investigate more to better optimize images in the app.  
+- I used layout="responsive", and under tablet sizes, the background became too small when there was more space available.  You have to set image sizes in the config for device sizes that are not default values.  
 - You have to worry about duplicate pictures in the other images section.  
-- `Aegean` has same picture with different ids which shows up in the other images section.
+- `Aegean` has the same picture with different IDs, which shows up in the other images section.
 - You can use a ref to try and prevent the label from overlapping the text of the input on blur.
-- Fixed overlapping by using valid pseudo-selector on the input in the css
-- Using a layout - caused problems with styling.  The min-height of 100vh in globals.css seems not to have be applied.  The benefits page's footer was not at the bottom of the page.
-- Problem with European Burmese -> doesn't have reference_image_id.  Top image is missing.  
-- Originally, had the Read More and See More links as p tags inside the Link element.  I changed them to buttons so they can be tabbable.  
-- Similarly, I added buttons to breeds list page so they can easily tabbed through as well. 
-- However, this is problematic as having a button inside an `<a>` tag is illegal in HTML5.  You need to `baseHref={true}` to the `<Link>` tag so the links will be tabbable.  [See Github for more](https://github.com/vercel/next.js/discussions/13125).
-- Converting from 12 to 14 -> Image had most breaking changes.  
+- I fixed overlapping by using a valid pseudo-selector on the input in the css.
+- Using a layout page caused styling issues.  The minimum height is `100 vh` in `globals.css`, but it seems not to have been applied as the benefits page's footer was not at the bottom of the page.
+- There is a problem with the European Burmese detail page. The breed doesn't have a `reference_image_id`.  The API request for the image fails and this prevents the page from showing any content.  Since I am using fetch, the error handling is not as easy or as clean to implement.  
+- Originally, the `Read More` and `See More` links were paragraph tags inside the `Link` element.  I changed them to buttons so they can be tabbable.  Similarly, I added buttons to breeds list page so they can easily be tabbed through as well. 
+- However, this is problematic as having a button inside an `<a>` tag is illegal in HTML5.  You need to add `baseHref={true}` to the `<Link>` tag so the links will be tabbable.  [See Github for more.](https://github.com/vercel/next.js/discussions/13125)
+- When I converted from Next 12 to Next 14, Image had the most breaking changes.  I decided to stick with the legacy image implementation.  
 - `images.domains` was deprecated.  I replaced it with `images.remotePatterns`.
-- The cat api documentation has improved since I first tackled this challenge.  I could look more into voting for cats and favoriting popular breeds.  Doing it may require logins or a local storage cookie to prevent a single user from voting excessively.  
-- Next 14 supports node 16 til early 2024 and then you will need node 18.  
+- The cat API documentation has improved since I first tackled this challenge.  I could look more into a voting system and the favoriting of breeds.  Doing it may require logins or a local storage cookie to prevent a single user from voting excessively.  
+- Next 14 supports Node 16 until early 2024 and then you will need Node 18.  
 - I decided not to add TypeScript when converting to App Router.
 - I followed this [guide](https://nextjs.org/docs/app/building-your-application/upgrading/app-router-migration) to convert to App Router.  
-- Without adding a head.js file, can you change the favicon?  I think you can just put a favicon.ico file in the app folder but the devchallenges favicon I had used is a png file.  
-- When copying pages over to the App router, it is best to name them slightly different.   This allows you keep your original page as naming conflicts will prevent the app from running.  
+- Without adding a head.js file, can you change the favicon?  I think you can just put a favicon.ico file in the app folder, but the devchallenges favicon I used is a png file.  
+- When copying pages over to the app router, it is best to name them slightly different.   This allows you to keep your original page, as naming conflicts will prevent the app from running.  
 - You can't utilize useSearchParams with server-side data loading. 
-- This means you have to add 'use client' and use a useEffect to load data with the searchTerm. 
-- This is a lose-lose situation as useEffect is slower for data fetching and you have worry about memory leaks and possibly add a cleanup function.   
-- You need to add Suspense when using useSearchParams.  Next will throw an error before your state updates and causes a re-render.    
-- I incremently added all pages to the app router.  I delete the `pages/_app.js` file and the remaining breed page did not have the correct styling and layout.  It is important to keep your `pages/_app.js` file when whenever you are using any pages files.    
-- I needed to use `encodeURI` on the breed names inside the `Link` hrefs.  Spaces are not allowed inside a `Link` hrefs.  
+- This means you have to add 'use client' and use a useEffect to load data with the `searchTerm`. 
+- This is a lose-lose situation as useEffect is slower for data fetching, and you have to worry about memory leaks and possibly add a cleanup function.  Adding abort controllers with multiple requests is more involved with less documentation available.  
+- You need to add `React Suspense` when using useSearchParams.  Next will throw an error before your state and page updates.    
+- I incrementally added all pages to the app router.  I deleted the `pages/_app.js` file and the remaining breed page did not have the correct styling and layout.  It is important to keep your `pages/_app.js` file whenever you are using any page files.    
+- I needed to use `encodeURI` on the breed names inside the `Link` hrefs.  Spaces are not allowed inside a link's href.  
 
 ## Continued Development
 
 - Investigate catapi changes
 - Benefits page could be refactored to use better semantic html i.e. list or dictionary list. 
-- Styling tweaks -> not all viewport sizes look good
-- European Burmese is missing a main image.  This causes an API request failure which prevents the page from showing anything. 
+- Styling tweaks -> Design is not mobile friendly.  
+- API error handling improvements
 - Typescript ?  
+- Testing
 
 ## How To Use
 
@@ -144,7 +145,7 @@ To clone and run this application, you'll need [Git](https://git-scm.com) and [N
 
 ```bash
 # Clone this repository
-$ git clone -b app-router-migration --single-branch https://github.com/jdegand/devchallenges-cat-wiki
+$ git clone https://github.com/jdegand/devchallenges-cat-wiki
 
 # Install dependencies
 $ npm install
