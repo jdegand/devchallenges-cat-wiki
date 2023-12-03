@@ -32,8 +32,9 @@ body {
   line-height: 1.5;
 }
 
-a:not([class]) {
-  text-decoration-skip-ink: auto;
+a {
+  color: #000;
+  text-decoration-color: #000;
 }
 
 img,
