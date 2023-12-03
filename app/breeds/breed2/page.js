@@ -60,8 +60,16 @@ export default function Breed2() {
 
     const fetchBreedData = async () => {
       const json = await getBreedBySearchTerm(searchTerm);
-      const image = await getHeroImage(json);
-      const otherImageUrls = await getOtherImageUrls(json);
+
+      //const image = await getHeroImage(json);
+      //const otherImageUrls = await getOtherImageUrls(json);
+
+      // Initiate both requests in parallel
+      const heroImage = getHeroImage(json);
+      const imageUrls = getOtherImageUrls(json);
+
+      // Wait for the promises to resolve
+      const [image, otherImageUrls] = await Promise.all([heroImage, imageUrls]);
 
       setJson(json);
       setImage(image);
@@ -99,7 +107,7 @@ export default function Breed2() {
           <h3 className={styles.fs35}>Other Images</h3>
           <div className={styles.otherImagesGrid}>
             {
-               otherImageUrls.map((image, index) => {
+              otherImageUrls.map((image, index) => {
                 return (
                   <Image key={index} src={image.url} alt="" width="400" height="400" objectFit="cover" className={styles.radius} />
                 )

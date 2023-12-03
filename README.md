@@ -218,3 +218,4 @@ $ npm run dev
 - [Reddit](https://www.reddit.com/r/nextjs/comments/13kwcax/the_app_router_is_not_productionready_yet/) - app router is not production ready yet 
 - [Stack Overflow](https://stackoverflow.com/questions/76609481/how-to-apply-global-css-styles-to-pages-folder-in-next-13) - how to apply global css styles to pages folder in next 13
 - [Stack Overflow](https://stackoverflow.com/questions/73114731/multiple-fetch-in-useeffect-fetch-data-depend-on-another-fetch-data) - multiple fetch in useEffect fetch data depend on another fetch data
+- [Next](https://nextjs.org/docs/app/building-your-application/data-fetching/patterns) - data fetching patterns
