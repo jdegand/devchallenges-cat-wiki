@@ -128,16 +128,19 @@ This application/site was created as a submission to a [DevChallenges](https://d
 - This is a lose-lose situation as useEffect is slower for data fetching, and you have to worry about memory leaks and possibly add a cleanup function.  Adding abort controllers with multiple requests is more involved with less documentation available.  
 - You need to add `React Suspense` when using useSearchParams.  Next will throw an error before your state and page updates.    
 - I incrementally added all pages to the app router.  I deleted the `pages/_app.js` file and the remaining breed page did not have the correct styling and layout.  It is important to keep your `pages/_app.js` file whenever you are using any page files.    
-- I needed to use `encodeURI` on the breed names inside the `Link` hrefs.  Spaces are not allowed inside a link's href.  
+- I needed to use `encodeURI` on the breed names inside the `Link` hrefs.  Spaces are not allowed inside a link's href. 
+- Prior to the Next 14 conversion, I checked for duplicate pictures in the extra images grid.  I have not done that here.  Ultimately, even if you perform a filter to exclude duplicate file names, the API database has entries of the same photo with a different file name.  I documented this issue in my [Angular conversion of this project](https://github.com/jdegand/angular-cat-wiki).
 
 ## Continued Development
 
 - Investigate catapi changes
-- Benefits page could be refactored to use better semantic html i.e. list or dictionary list. 
+- Benefits page could be refactored to use better semantic html or a FAQ design.   
 - Styling tweaks -> Design is not mobile friendly.  
 - API error handling improvements
 - Typescript ?  
 - Testing
+- Better dynamic page title implementation
+- Filter duplicate image entries from the Breed page
 
 ## How To Use
 
@@ -217,3 +220,4 @@ $ npm run dev
 - [Stack Overflow](https://stackoverflow.com/questions/6393827/can-i-nest-a-button-element-inside-an-a-using-html5) - can I nest a button element element inside an a tag using HTML5?
 - [Github](https://github.com/vercel/next.js/discussions/13125) - next link tag accessibility concerns
 - [MDN Docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/encodeURI) - encodeURI
+- [Github](https://github.com/vercel/next.js/discussions/50872) - How to set page title and description if page is "use client" ? #50872

@@ -2,12 +2,16 @@
 
 import styles from './home.module.css';
 import Image from 'next/legacy/image';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import Suggestions from '../components/Suggestions';
 
 export default function HomePage({ json }) {
+
+  useEffect(()=> {
+    document.title = 'Cat Wiki';
+  }, []);
 
   const breeds = json.map(i => i.name);
 

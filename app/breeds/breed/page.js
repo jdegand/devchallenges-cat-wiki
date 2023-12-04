@@ -1,6 +1,29 @@
 'use client';
 
 // need to look up how to change title in a client page
+// see https://github.com/vercel/next.js/discussions/50872
+
+/*
+export const metadata = {
+    title: `Details page`
+}
+
+export default function BreedLayout({
+    children,
+}) {
+
+    return (
+        <>
+            {children}
+        </>
+    )
+}
+
+// You can create a `breed/layout.js` file with the code above in it, but this doesn't really allow for a dynamic title
+// setting document.title directly in the useEffect seems to be the easiest way to do this but not ideal
+// seems to break title on navigation with back button -> added useEffect in home-page to set title back to layout value 
+*/
+
 
 import { useSearchParams } from 'next/navigation';
 import Bubble from "../../../components/Bubble";
@@ -23,6 +46,8 @@ export default function Breed2() {
   const searchTerm = searchParams.get('searchTerm');
 
   useEffect(() => {
+
+    document.title = `${searchTerm} details`;
 
     async function getBreedBySearchTerm(searchTerm) {
       const res = await fetch(`https://api.thecatapi.com/v1/breeds/search?q=${searchTerm}`, {
