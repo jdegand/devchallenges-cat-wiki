@@ -107,3 +107,11 @@
         justify-content: center;
     }
 }
+
+.fallback-section {
+    display: flex;
+    justify-content: center;
+    color: #544439;
+    width: 100vw;
+    height: 100vh;
+}
