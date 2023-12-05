@@ -130,12 +130,10 @@ This application/site was created as a submission to a [DevChallenges](https://d
 - I incrementally added all pages to the app router.  I deleted the `pages/_app.js` file and the remaining breed page did not have the correct styling and layout.  It is important to keep your `pages/_app.js` file whenever you are using any page files.    
 - I needed to use `encodeURI` on the breed names inside the `Link` hrefs.  Spaces are not allowed inside a link's href. 
 - Prior to the Next 14 conversion, I checked for duplicate pictures in the extra images grid.  I have not done that here.  Ultimately, even if you perform a filter to exclude duplicate file names, the API database has entries of the same photo with a different file name.  I documented this issue in my [Angular conversion of this project](https://github.com/jdegand/angular-cat-wiki).
-- The breed detail page is deopted and uses the client to fetch the data.  This may expose the API key.  I have looked in the devtools and `x-api-key` is undefined for the api requests. 
-- Suspense isn't showing the Fallback component in the breed component.  It may be best to wrap the breed component inside another component and then add the Suspense to the whole new component.  I think there is an issue with Suspense if you don't provide a key as Next cannot tell if the Suspense component has changed or not.  See [this for more](https://stackoverflow.com/questions/76644147/suspense-fallback-is-not-showing-in-nextjs-13-when-navigate-by-userouter).
-- Once again, useSearchParams has proved to be problematic.  I may have to look into options to replace useSearchParams. 
-- I may have to refactor to remove the useEffect to get the Suspense working.    
-- `generateStaticParams` may be a possible alternative.  
-- The `breeds.module.css` is preloaded but not used by the breed page.  There is a warning in the console.  I will split the duplicated css and import the `breeds.module.css` in the breed page.    
+- The breed detail page is deopted and uses the client to fetch the data.  This may expose the API key.  I have looked in the devtools and the `x-api-key` is undefined for the API requests. 
+- Suspense isn't showing the Fallback component in the breed component.  It may be best to wrap the breed component inside another component and then add the Suspense to the whole new component.  
+- If you don't provide a key to the Suspense component, Next cannot tell if it has changed or not.  See [this for more](https://stackoverflow.com/questions/76644147/suspense-fallback-is-not-showing-in-nextjs-13-when-navigate-by-userouter).  
+- The `breeds.module.css` is preloaded, but it is not used by the breed page.  There is a warning in the console.  I will split the duplicated css and import the `breeds.module.css` in the breed page.    
 
 ## Continued Development
 
