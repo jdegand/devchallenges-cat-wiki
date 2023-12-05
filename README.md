@@ -132,8 +132,9 @@ This application/site was created as a submission to a [DevChallenges](https://d
 - Prior to the Next 14 conversion, I checked for duplicate pictures in the extra images grid.  I have not done that here.  Ultimately, even if you perform a filter to exclude duplicate file names, the API database has entries of the same photo with a different file name.  I documented this issue in my [Angular conversion of this project](https://github.com/jdegand/angular-cat-wiki).
 - The breed detail page is deopted and uses the client to fetch the data.  This may expose the API key.  I have looked in the devtools and `x-api-key` is undefined for the api requests. 
 - Suspense isn't showing the Fallback component in the breed component.  It may be best to wrap the breed component inside another component and then add the Suspense to the whole new component.  I think there is an issue with Suspense if you don't provide a key as Next cannot tell if the Suspense component has changed or not.  See [this for more](https://stackoverflow.com/questions/76644147/suspense-fallback-is-not-showing-in-nextjs-13-when-navigate-by-userouter).
-- Once again, useSearchParams has proved to problematic.  I may have to look into options to replace useSearchParams. 
+- Once again, useSearchParams has proved to be problematic.  I may have to look into options to replace useSearchParams. 
 - I may have to refactor to remove the useEffect to get the Suspense working.    
+- `generateStaticParams` may be a possible alternative.  
 - The `breeds.module.css` is preloaded but not used by the breed page.  There is a warning in the console.  I will split the duplicated css and import the `breeds.module.css` in the breed page.    
 
 ## Continued Development
