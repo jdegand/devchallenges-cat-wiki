@@ -27,7 +27,7 @@ export default function BreedLayout({
 
 import { useSearchParams } from 'next/navigation';
 import Bubble from "../../../components/Bubble";
-import styles from './bubble.module.css';
+import styles from './breed.module.css';
 import Image from 'next/legacy/image';
 
 import { useState, useEffect, Suspense } from 'react';

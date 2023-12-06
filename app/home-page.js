@@ -64,7 +64,7 @@ export default function HomePage({ json }) {
           <div className={styles.brownLine}></div>
           <div className={styles.discoverBreeds}>
             <h2 className={styles.fs48}>66+ Breeds For you to discover</h2>
-            <Link href="/breeds" passHref={true}>
+            <Link prefetch={false} href="/breeds" passHref={true}>
               <p className={styles.readMore}>SEE MORE <span>&rarr;</span></p>
             </Link>
           </div>
@@ -72,7 +72,7 @@ export default function HomePage({ json }) {
             {
               featuredBreeds.map(breed => {
                 return (
-                  <Link href={`/breeds/breed?searchTerm=${encodeURI(breed.name)}`} key={breed.image.id} passHref={true}>
+                  <Link prefetch={false} href={`/breeds/breed?searchTerm=${encodeURI(breed.name)}`} key={breed.image.id} passHref={true}>
                     <div className={styles.breedDiv}>
                       <Image className={styles.breedImage} src={breed.image.url} alt="" width="250" height="250" />
                       <div>{breed.name}</div>
@@ -88,7 +88,7 @@ export default function HomePage({ json }) {
             <div className={styles.brownLine}></div>
             <h2 className={styles.fs48}>Why should you have a cat?</h2>
             <p>Having a cat around you can actually trigger the release of calming chemicals in your body which lower your stress and anxiety levels.</p>
-            <Link href="/benefits" passHref={true}>
+            <Link prefetch={false} href="/benefits" passHref={true}>
               <p className={`${styles.readMore} ${styles.marginBlock}`}>READ MORE <span>&rarr;</span></p>
             </Link>
           </div>

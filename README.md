@@ -134,6 +134,8 @@ This application/site was created as a submission to a [DevChallenges](https://d
 - Suspense isn't showing the Fallback component in the breed component.  It may be best to wrap the breed component inside another component and then add the Suspense to the whole new component.  
 - If you don't provide a key to the Suspense component, Next cannot tell if it has changed or not.  See [this for more](https://stackoverflow.com/questions/76644147/suspense-fallback-is-not-showing-in-nextjs-13-when-navigate-by-userouter).  
 - The `breeds.module.css` is preloaded, but it is not used by the breed page.  There is a warning in the console.  I will split the duplicated css and import the `breeds.module.css` in the breed page.    
+- Link component preloads CSS modules and this causes a warning in the console.  If there are many Link tags, the browser console will be flooded.  This is very annoying.  If you add `prefetch={false}` to the Link tag, the warning will go away.  Performance implications?  I didn't notice much of a difference. 
+- App router seems to have a very loose CSS structure.  You can colocate CSS anywhere.  I am not really a fan of this and I preferred using a styles folder.  In my conversion, I left the original styles folder and I still have it for now.  I could move the component styles into the components folder or I could just add the files to the base app folder.
 
 ## Continued Development
 
@@ -230,3 +232,4 @@ $ npm run dev
 - [Next](https://nextjs.org/blog/security-nextjs-server-components-actions) - security nextjs server components actions
 - [Stack Overflow](https://stackoverflow.com/questions/76644147/suspense-fallback-is-not-showing-in-nextjs-13-when-navigate-by-userouter) - suspense fallback is not showing in next 13 when navigate by useRouter
 - [Github](https://github.com/vercel/next.js/issues/46258) - Navigation changing just searchParams doesn't trigger loading.tsx
+- [Github](https://github.com/vercel/next.js/discussions/49607) - How to fix link preload warning in Next.js app?
