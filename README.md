@@ -121,7 +121,7 @@ This application/site was created as a submission to a [DevChallenges](https://d
 - Next 14 supports Node 16 until early 2024 and then you will need Node 18.  
 - I decided not to add TypeScript when converting to App Router.
 - I followed this [guide](https://nextjs.org/docs/app/building-your-application/upgrading/app-router-migration) to convert to App Router.  
-- Without adding a head.js file, can you change the favicon?  I think you can just put a favicon.ico file in the app folder, but the devchallenges favicon I used is a png file.  
+- Without adding a head.js file, can you change the favicon? Yes. Next will look for files that start with `icon`, `favicon`, or `apple-icon` in the app folder.  
 - When copying pages over to the app router, it is best to name them slightly different.   This allows you to keep your original page, as naming conflicts will prevent the app from running.  
 - You can't utilize useSearchParams with server-side data loading. 
 - This means you have to add 'use client' and use a useEffect to load data with the `searchTerm`. 
