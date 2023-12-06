@@ -178,10 +178,8 @@ export default function Breed({ searchParams }) {
   }
 
   return (
-    <main>
       <Suspense key={params.toString()} fallback={<Loading />}>
         <Breed2 />
       </Suspense>
-    </main>
   )
 }
