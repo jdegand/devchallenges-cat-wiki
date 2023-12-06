@@ -24,7 +24,6 @@ export default function BreedLayout({
 // seems to break title on navigation with back button -> added useEffect in home-page to set title back to layout value 
 */
 
-
 import { useSearchParams } from 'next/navigation';
 import Bubble from "../../../components/Bubble";
 import styles from './breed.module.css';
@@ -158,27 +157,21 @@ function Breed2() {
   )
 }
 
-export default function Breed({ searchParams }) {
+export default function Breed() {
 
-  // The fallback doesn't show appear in the html 
-  // 'use client' and useEffect problem ?
-  // you don't get the deopted warning anymore
-  // Problem because of key issue?
-  // https://github.com/vercel/next.js/issues/46258
-  // https://github.com/vercel/next.js/discussions/50563
-
-  const params = new URLSearchParams(searchParams);
-
+  // removed Loading styling 
+  // very briefly displayed 
+  // and styles didn't appear to be applied 
   function Loading() {
     return (
-      <section className="fallback-section">
+      <section>
         <h1>Loading...</h1>
       </section>
     );
   }
 
   return (
-      <Suspense key={params.toString()} fallback={<Loading />}>
+      <Suspense fallback={<Loading />}>
         <Breed2 />
       </Suspense>
   )

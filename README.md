@@ -131,11 +131,9 @@ This application/site was created as a submission to a [DevChallenges](https://d
 - I needed to use `encodeURI` on the breed names inside the `Link` hrefs.  Spaces are not allowed inside a link's href. 
 - Prior to the Next 14 conversion, I checked for duplicate pictures in the extra images grid.  I have not done that here.  Ultimately, even if you perform a filter to exclude duplicate file names, the API database has entries of the same photo with a different file name.  I documented this issue in my [Angular conversion of this project](https://github.com/jdegand/angular-cat-wiki).
 - The breed detail page was deopted and used the client to fetch the data.  This may expose the API key.  I looked in the devtools and the `x-api-key` was undefined for the API requests.  This error was caused by an incorrect placement of React Suspense.  Suspense is needed when you add `useSearchParams`.  I think the Suspense needs to wrap a component function and not just JSX.            
-- Suspense isn't showing the Fallback component in the breed component.
-- If you don't provide a key to the Suspense component, Next cannot tell if it has changed or not.  See [this for more](https://stackoverflow.com/questions/76644147/suspense-fallback-is-not-showing-in-nextjs-13-when-navigate-by-userouter).  
-- The key might not be necessary. I had the Suspense inside a main tag.  Suspense probably needs to be the outermost element in its component.  The fallback displays very briefly.  Even on slow 3G, the loading text was barely there.  
+- I had the Suspense inside a `main` tag.  Suspense probably needs to be the outermost element in its component.  The fallback displays very briefly.  Even on slow 3G, the loading text was barely there.  It seems like you only see the Fallback when you run the build version of the app.  
 - The `breeds.module.css` was preloaded, but it was not used by the breed page. 
-- Link component preloads CSS modules and this causes a warning in the console.  If there are many Link tags, the browser console will be flooded.  This is very annoying.  If you add `prefetch={false}` to the Link tag, the warning will go away.  Performance implications?  I didn't notice much of a difference. 
+- Link component preloads CSS modules and this causes a warning in the console.  If there are many Link tags, the browser console will be flooded.  This is very annoying.  If you add `prefetch={false}` to the Link tag, the warning will go away.  Performance implications?  I didn't notice much of a difference.  
 - App router seems to have a very loose CSS structure.  You can colocate CSS anywhere.  I am not really a fan of this and I preferred using a styles folder.  In my conversion, I left the original styles folder and I still have it for now.  I could move the component styles into the components folder or I could just add the files to the base app folder.
 
 ## Continued Development
@@ -148,7 +146,7 @@ This application/site was created as a submission to a [DevChallenges](https://d
 - Testing
 - Better dynamic page title implementation
 - Filter duplicate image entries from the Breed page
-- useSearchParams and Suspense issues
+- Suspense issues
 
 ## How To Use
 
@@ -234,3 +232,4 @@ $ npm run dev
 - [Stack Overflow](https://stackoverflow.com/questions/76644147/suspense-fallback-is-not-showing-in-nextjs-13-when-navigate-by-userouter) - suspense fallback is not showing in next 13 when navigate by useRouter
 - [Github](https://github.com/vercel/next.js/issues/46258) - Navigation changing just searchParams doesn't trigger loading.tsx
 - [Github](https://github.com/vercel/next.js/discussions/49607) - How to fix link preload warning in Next.js app?
+- [Github](https://github.com/vercel/next.js/discussions/50563) - Suspense only shows its fallback once (on page load), when async component suspends, the Suspense wrapper doesn't fall back. All components working however
