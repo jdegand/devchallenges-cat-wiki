@@ -3,9 +3,3 @@
     margin: 0 auto 50px auto;
     font-size: 24px;
 }
-
-@media (min-width: 768px) {
-    .main {
-        height: 91vh;
-    }
-}

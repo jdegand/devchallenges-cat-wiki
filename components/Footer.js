@@ -1,9 +1,10 @@
 import Image from "next/legacy/image";
 import Link from "next/link";
+import styles from "../styles/Footer.module.css"
 
 function Footer() {
     return (
-        <footer className="footer">
+        <footer className={styles.footer}>
             <Link prefetch={false} href="/">
                 <div>
                     <Image src="/CatwikiLogoWhite.svg" alt="" width="128" height="43" />

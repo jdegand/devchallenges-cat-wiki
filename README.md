@@ -135,17 +135,19 @@ This application/site was created as a submission to a [DevChallenges](https://d
 - The `breeds.module.css` was preloaded, but it was not used by the breed page. 
 - Link component preloads CSS modules and this causes a warning in the console.  If there are many Link tags, the browser console will be flooded.  This is very annoying.  If you add `prefetch={false}` to the Link tag, the warning will go away.  Performance implications?  I didn't notice much of a difference.  
 - App router seems to have a very loose CSS structure.  You can colocate CSS anywhere.  I am not really a fan of this and I preferred using a styles folder.  In my conversion, I left the original styles folder and I still have it for now.  I could move the component styles into the components folder or I could just add the files to the base app folder.
+- Link's default styling throws off my header's styling.  I used the same html as my Angular conversion and just changed the a tags to Link tags and the CSS was off.   
+- Header and Footer components have limited styling so I initially added those styles to `global.css`.  I have since removed those styles and added a Footer module while adding the Header's styling inline.   
 
 ## Continued Development
 
-- Investigate catapi changes 
-- Styling tweaks -> Design is not mobile friendly.  
+- Investigate catapi changes  
 - API error handling improvements
 - Typescript ?  
 - Testing
 - Better dynamic page title implementation
 - Filter duplicate image entries from the Breed page
 - Suspense issues
+- Header styling issues on screens smaller than 425px & various other CSS issues
 
 ## How To Use
 
