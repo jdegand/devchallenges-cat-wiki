@@ -26,7 +26,7 @@
     color: black;
     position: absolute;
     top: 50%;
-    left: 0.5rem;
+    left: 1.5rem;
     transform: translateY(-50%);
     transition: top 250ms ease-in-out;
 }
@@ -95,6 +95,9 @@ input:valid+.floatingLabel {
 
 .searchInput {
     width: 300px;
+    padding: 10px;
+    border-radius: 100px;
+    text-indent: 16px;
 }
 
 .searchBtn {
@@ -105,7 +108,7 @@ input:valid+.floatingLabel {
     align-items: center;
     position: absolute;
     top: 50%;
-    left: 260px;
+    left: 250px;
     transform: translateY(-50%);
 }
 
@@ -114,6 +117,11 @@ input:valid+.floatingLabel {
     padding: 50px 20px;
     font-size: 20px;
     width: 95vw;
+}
+
+.breedSectionH1 {
+    font-size: 20px;
+    font-weight: normal;
 }
 
 .breedFlex {

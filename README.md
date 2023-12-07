@@ -138,8 +138,7 @@ This application/site was created as a submission to a [DevChallenges](https://d
 
 ## Continued Development
 
-- Investigate catapi changes
-- Benefits page could be refactored to use better semantic html or a FAQ design.   
+- Investigate catapi changes 
 - Styling tweaks -> Design is not mobile friendly.  
 - API error handling improvements
 - Typescript ?  

@@ -60,10 +60,10 @@ export default function HomePage({ json }) {
           {searchTerm.length >= 1 && toggle && <Suggestions breeds={breeds} searchTerm={searchTerm} handleClick={handleSuggestion} />}
         </div>
         <section className={styles.breedSection}>
-          <p>Most Searched Breeds</p>
+          <h1 className={styles.breedSectionH1}>Most Searched Breeds</h1>
           <div className={styles.brownLine}></div>
           <div className={styles.discoverBreeds}>
-            <h2 className={styles.fs48}>66+ Breeds For you to discover</h2>
+            <h2 className={styles.fs48}>66+ Breeds for you to discover</h2>
             <Link prefetch={false} href="/breeds" passHref={true}>
               <p className={styles.readMore}>SEE MORE <span>&rarr;</span></p>
             </Link>
