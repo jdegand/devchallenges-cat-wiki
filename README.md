@@ -137,6 +137,9 @@ This application/site was created as a submission to a [DevChallenges](https://d
 - App router seems to have a very loose CSS structure.  You can colocate CSS anywhere.  I am not really a fan of this and I preferred using a styles folder.  In my conversion, I left the original styles folder and I still have it for now.  I could move the component styles into the components folder or I could just add the files to the base app folder.
 - Link's default styling throws off my header's styling.  I used the same html as my Angular conversion and just changed the a tags to Link tags and the CSS was off.   
 - Header and Footer components have limited styling so I initially added those styles to `global.css`.  I have since removed those styles and added a Footer module while adding the Header's styling inline.   
+- Testing Next 14's App Router is uncharted territory.  It is tough to decide on an approach that works.  I think E2E testing is further along than unit testing.  
+- [Next testing documentation](https://github.com/vercel/next.js/pull/59268) is not done.  
+- MSW works with client side pages, but does not work with server rendered pages.  See [Github for more](https://github.com/mswjs/msw/issues/1644).
 
 ## Continued Development
 
@@ -234,3 +237,5 @@ $ npm run dev
 - [Github](https://github.com/vercel/next.js/issues/46258) - Navigation changing just searchParams doesn't trigger loading.tsx
 - [Github](https://github.com/vercel/next.js/discussions/49607) - How to fix link preload warning in Next.js app?
 - [Github](https://github.com/vercel/next.js/discussions/50563) - Suspense only shows its fallback once (on page load), when async component suspends, the Suspense wrapper doesn't fall back. All components working however
+- [Github](https://github.com/vercel/next.js/discussions/48937) - useRouter mocking
+- [Github](https://github.com/vercel/next.js/discussions/53499) - mock `next/navigation`
