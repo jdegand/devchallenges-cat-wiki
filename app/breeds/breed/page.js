@@ -3,27 +3,6 @@
 // need to look up how to change title in a client page
 // see https://github.com/vercel/next.js/discussions/50872
 
-/*
-export const metadata = {
-    title: `Details page`
-}
-
-export default function BreedLayout({
-    children,
-}) {
-
-    return (
-        <>
-            {children}
-        </>
-    )
-}
-
-// You can create a `breed/layout.js` file with the code above in it, but this doesn't really allow for a dynamic title
-// setting document.title directly in the useEffect seems to be the easiest way to do this but not ideal
-// seems to break title on navigation with back button -> added useEffect in home-page to set title back to layout value 
-*/
-
 import { useSearchParams } from 'next/navigation';
 import Bubble from "../../../components/Bubble";
 import styles from './breed.module.css';
@@ -100,9 +79,6 @@ function Breed2() {
     const fetchBreedData = async () => {
       const json = await getBreedBySearchTerm(searchTerm);
 
-      //const image = await getHeroImage(json);
-      //const otherImageUrls = await getOtherImageUrls(json);
-
       // Initiate both requests in parallel
       const heroImage = getHeroImage(json);
       const imageUrls = getOtherImageUrls(json);
@@ -126,19 +102,19 @@ function Breed2() {
           {image && <Image src={image.url} alt="" width="400" height="400" className={styles.radius} priority />}
         </div>
         {json && <section>
-          <h1>{json[0].name}</h1>
-          <p className={styles.description}>{json[0].description}</p>
-          <h2>Termperament: {json[0].temperament}</h2>
-          <h2>Origin: {json[0].origin}</h2>
-          <h2>Life Span: {json[0].life_span} years</h2>
-          <h2 className={styles.bubbleGrid}>Adaptability: <Bubble count={json && json[0].adaptability} /></h2>
-          <h2 className={styles.bubbleGrid}>Affection Level: <Bubble count={json && json[0].affection_level} /></h2>
-          <h2 className={styles.bubbleGrid}>Child Friendly: <Bubble count={json && json[0].child_friendly} /></h2>
-          <h2 className={styles.bubbleGrid}>Grooming: <Bubble count={json && json[0].grooming} /></h2>
-          <h2 className={styles.bubbleGrid}>Intelligence: <Bubble count={json && json[0].intelligence} /></h2>
-          <h2 className={styles.bubbleGrid}>Health Issues: <Bubble count={json && json[0].health_issues} /></h2>
-          <h2 className={styles.bubbleGrid}>Social Needs: <Bubble count={json && json[0].social_needs} /></h2>
-          <h2 className={styles.bubbleGrid}>Stranger Friendly: <Bubble count={json && json[0].stranger_friendly} /></h2>
+          <h1>{json?.[0]?.name}</h1>
+          <p className={styles.description}>{json?.[0]?.description}</p>
+          <h2>Termperament: {json?.[0]?.temperament}</h2>
+          <h2>Origin: {json?.[0]?.origin}</h2>
+          <h2>Life Span: {json?.[0]?.life_span} years</h2>
+          <h2 className={styles.bubbleGrid}>Adaptability: <Bubble count={json?.[0]?.adaptability} /></h2>
+          <h2 className={styles.bubbleGrid}>Affection Level: <Bubble count={json?.[0]?.affection_level} /></h2>
+          <h2 className={styles.bubbleGrid}>Child Friendly: <Bubble count={json?.[0]?.child_friendly} /></h2>
+          <h2 className={styles.bubbleGrid}>Grooming: <Bubble count={json?.[0]?.grooming} /></h2>
+          <h2 className={styles.bubbleGrid}>Intelligence: <Bubble count={json?.[0]?.intelligence} /></h2>
+          <h2 className={styles.bubbleGrid}>Health Issues: <Bubble count={json?.[0]?.health_issues} /></h2>
+          <h2 className={styles.bubbleGrid}>Social Needs: <Bubble count={json?.[0]?.social_needs} /></h2>
+          <h2 className={styles.bubbleGrid}>Stranger Friendly: <Bubble count={json?.[0]?.stranger_friendly} /></h2>
         </section>}
       </div>
       {otherImageUrls && <section>
@@ -171,8 +147,8 @@ export default function Breed() {
   }
 
   return (
-      <Suspense fallback={<Loading />}>
-        <Breed2 />
-      </Suspense>
+    <Suspense fallback={<Loading />}>
+      <Breed2 />
+    </Suspense>
   )
 }
