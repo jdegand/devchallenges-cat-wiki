@@ -1,7 +1,7 @@
 <h1 align="center">Cat Wiki</h1>
 
 <div align="center">
-   Solution for a challenge from  <a href="https://legacy.devchallenges.io/challenges/f4NJ53rcfgrP6sBMD2jt" target="_blank">Devchallenges.io</a>.
+   Solution for a challenge from  <a href="https://web.archive.org/web/20231130034437/https://legacy.devchallenges.io/challenges/f4NJ53rcfgrP6sBMD2jt" target="_blank">Devchallenges.io</a>.
 </div>
 
 ## Table of Contents
@@ -16,67 +16,67 @@
 
 ## Overview
 
-![](screenshots/homepage-mobile-1.png)
+![Homepage Mobile](screenshots/homepage-mobile-1.png)
 
 ***
 
-![](screenshots/homepage-mobile-2.png)
+![Homepage Mobile 2](screenshots/homepage-mobile-2.png)
 
 ***
 
-![](screenshots/mobile-suggestions.png)
+![Mobile Suggestions](screenshots/mobile-suggestions.png)
 
 ***
 
-![](screenshots/devchallenges-cat-wiki-homepage.png)
+![Homepage](screenshots/devchallenges-cat-wiki-homepage.png)
 
 ***
 
-![](screenshots/devchallenges-cat-wiki-homepage-input-focus.png)
+![Homepage Input Focus](screenshots/devchallenges-cat-wiki-homepage-input-focus.png)
 
 ***
 
-![](screenshots/devchallenges-cat-wiki-input-search-suggestions.png)
+![Input Search Suggestions](screenshots/devchallenges-cat-wiki-input-search-suggestions.png)
 
 ***
 
-![](screenshots/on-selection-suggestions-go-away-but-not-submitted.png)
+![Suggestions gone](screenshots/on-selection-suggestions-go-away-but-not-submitted.png)
 
 ***
 
-![](screenshots/american-shorthair-detail-page-1.png)
+![Detail Page 1](screenshots/american-shorthair-detail-page-1.png)
 
 ***
 
-![](screenshots/american-shorthair-detail-page-2.png)
+![Detail Page 2](screenshots/american-shorthair-detail-page-2.png)
 
 ***
 
-![](screenshots/american-shorthair-detail-1000px-1.png)
+![Detail Page 1000px](screenshots/american-shorthair-detail-1000px-1.png)
 
 ***
 
-![](screenshots/american-shorthair-detail-1000px-2.png)
+![Detail Page 1000px 2](screenshots/american-shorthair-detail-1000px-2.png)
 
 ***
 
-![](screenshots/american-shorthair-detail-mobile-1.png)
+![Detail Mobile](screenshots/american-shorthair-detail-mobile-1.png)
 
 ***
 
-![](screenshots/american-shorthair-detail-mobile-2.png)
+![Detail Mobile 2](screenshots/american-shorthair-detail-mobile-2.png)
 
 ***
 
-![](screenshots/see-more-page-1.png)
+![See More Page 1](screenshots/see-more-page-1.png)
 
 ***
 
-![](screenshots/see-more-page-2.png)
+![See More Page 2](screenshots/see-more-page-2.png)
 
 ***
 
-![](screenshots/health-benefits-page.png "typos fixed")
+![Benefits Page](screenshots/health-benefits-page.png "typos fixed")
 
 ***
 
@@ -88,7 +88,7 @@
 
 ## Features
 
-This application/site was created as a submission to a [DevChallenges](https://devchallenges.io/challenges) challenge. The [challenge](https://legacy.devchallenges.io/challenges/f4NJ53rcfgrP6sBMD2jt) was to build an application to complete the given user stories.
+This application/site was created as a submission to a [DevChallenges](https://devchallenges.io/challenges) challenge. The [challenge](https://web.archive.org/web/20231130034437/https://legacy.devchallenges.io/challenges/f4NJ53rcfgrP6sBMD2jt) was to build an application to complete the given user stories. **Note**: The previous design document may be incomplete, as you need to find an archived version of the challenge as all `legacy` challenges have had their documentation removed from DevChallenges.
 
 - [x]  I can search for cat breeds and select a breed of my choice
 - [x]  I can see the most popular searched cat breeds summary on the homepage
@@ -103,7 +103,7 @@ This application/site was created as a submission to a [DevChallenges](https://d
 
 - DevChallenges did not add a design for two pages: the breeds index page and the `why you should have a cat` page.  
 - You can't search for multiple breeds at once on the API.  You have to use a promise.all() / multiple fetches to get each breed needed, i.e. `/breeds/search?q=beng`.
-- You can get 4 random images with image search and the limit parameter, but it is random, and some pictures don't make sense for the design.  Plus, image search gives you no idea of the breed etc.  
+- You can get 4 random images with image search and the limit parameter, but it is random, and some pictures don't make sense for the design.  Plus, image search gives you no idea of the breed etc. 
 - Image component has a lot of quirks and things to be mindful of.  Responsive image optimization is a nightmare.  It shouldn't be this unclear to do things that are extremely easy to do in basic HTML code. Adding a srcSet to the Image component is not really covered.  Having multiple images is not really necessary with the Image component.  So do you use the largest image exclusively? Next does scale down.  Can it scale up from a medium-sized image? 
 - There have been many updates to Next Image since I first did this challenge.  I need to investigate more to better optimize images in the app.  
 - I used layout="responsive", and under tablet sizes, the background became too small when there was more space available.  You have to set image sizes in the config for device sizes that are not default values.  
@@ -158,7 +158,7 @@ To clone and run this application, you'll need [Git](https://git-scm.com) and [N
 
 ```bash
 # Clone this repository
-$ git clone https://github.com/jdegand/devchallenges-cat-wiki
+$ git clone https://github.com/jdegand/devchallenges-cat-wiki.git
 
 # Install dependencies
 $ npm install
